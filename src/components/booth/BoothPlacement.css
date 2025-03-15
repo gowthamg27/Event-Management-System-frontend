@@ -1,0 +1,212 @@
+:root {
+  --primary-color: #b3bcf1;
+  --secondary-color: #A884B7;
+  --background-color: #FFFFFF;
+  --text-color: #333333;
+  --header-text-color: #333333;
+  --border-radius: 12px;
+  --shadow-color: rgba(63, 81, 181, 0.15);
+  --gradient-start: #FF4081;
+  --gradient-end: #A884B7;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: var(--header-text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.booth-placement {
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+}
+
+h1 {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px var(--shadow-color);
+}
+
+button {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 20px;
+}
+
+button:hover {
+  background-color: #C49BD4;
+  transform: translateY(-3px);
+}
+
+.floor-plan-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-layout {
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--primary-color);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zoom-controls {
+  margin-bottom: 20px;
+}
+
+.legend {
+  align-self: flex-start;
+}
+
+.booth-management .search-filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.booth-management .add-booth {
+  margin-bottom: 20px;
+}
+
+.booth-list {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing:  12px;
+}
+
+.booth-list th, .booth-list td {
+  padding: 15px;
+  text-align: center;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.booth-list th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+.booth-list td {
+  padding: 20px 15px;
+}
+
+.booth-list th:not(:last-child),
+.booth-list td:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+.booth-list tr:hover td {
+  background-color: #EDE7F6;
+}
+
+.booth-details-and-drag-drop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.booth-details {
+  width: 96%;
+}
+
+.drag-drop-tool {
+  width: 96%;
+}
+
+.drag-drop-tool .interactive-floor-plan {
+  min-height: 500px;
+  border: 3px dashed var(--primary-color);
+  background-color: #EDE7F6;
+  margin-bottom: 25px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1.5em;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.drag-drop-tool .interactive-floor-plan:hover {
+  border-color: var(--secondary-color);
+  background-color: #F3E5F5;
+}
+
+.export-reports {
+  display: flex;
+  justify-content: space-between;
+}
+
+.export-reports button {
+  margin-right: 0;
+}
+
+input, select {
+  padding: 12px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  margin-right: 20px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  color: var(--text-color);
+  background-color: white;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+}

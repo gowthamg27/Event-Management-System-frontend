@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #6200ee;
+  --secondary-color: #03dac6;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --card-background: #ffffff;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.live-qa-and-polling {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #3700b3;
+}
+
+h1 {
+  margin-left: 20px;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.overview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.summary-box {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  margin: 0 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.summary-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.summary-box h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.summary-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0 0;
+}
+
+.qa-management, .polling-management, .add-qa, .add-poll, .export-reports {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.qa-list, .poll-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.qa-list th, .qa-list td, .poll-list th, .poll-list td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.qa-list th, .poll-list th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.qa-list tr:hover, .poll-list tr:hover {
+  background-color: #f5f5f5;
+}
+
+.qa-list button, .poll-list button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.qa-list button:hover, .poll-list button:hover {
+  background-color: var(--secondary-color);
+}
+
+.add-qa form, .add-poll form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-qa input, .add-qa select, .add-poll input, .add-poll select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-qa button, .add-poll button, .export-reports button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-qa button:hover, .add-poll button:hover, .export-reports button:hover {
+  background-color: #3700b3;
+  transform: scale(1.05);
+}
+
+.export-reports {
+  display: flex;
+  justify-content: space-between;
+}
+
+.export-reports button {
+  flex: 1;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .overview, .export-reports {
+    flex-direction: column;
+  }
+
+  .summary-box, .export-reports button {
+    margin: 10px 0;
+  }
+}

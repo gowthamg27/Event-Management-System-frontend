@@ -1,0 +1,228 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.registration-form-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+h1 {
+  margin-left: 20px;
+  color: #333;
+}
+
+/* Section styles */
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+h2 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+/* Form field styles */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Error message styles */
+.error {
+  color: #ff0000;
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+/* Button styles */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.publish-button, .preview-button {
+  margin-left: 10px;
+}
+
+/* Ticket type styles */
+.ticket-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.ticket-type > div {
+  flex: 1;
+  min-width: 150px;
+}
+
+.ticket-type label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ticket-type select,
+.ticket-type input {
+  width: 100%;
+}
+
+/* FAQ styles */
+.faq-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Preview modal styles */
+/* ... (keep all existing styles) */
+
+/* Updated Preview modal styles */
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.preview-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.preview-content h2 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+.preview-content div {
+  margin-bottom: 10px;
+}
+
+.preview-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.preview-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.preview-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.preview-buttons button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.preview-buttons button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.preview-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .registration-form-page {
+    padding: 10px;
+  }
+
+  .ticket-type {
+    flex-direction: column;
+  }
+
+  .ticket-type > div {
+    width: 100%;
+  }
+
+  .preview-modal {
+    max-width: 95%;
+    max-height: 95%;
+  }
+}

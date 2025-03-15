@@ -1,0 +1,266 @@
+/* Basic Styling */
+.sponsors-management {
+  background-color: #f7f8fa;
+  padding: 20px;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #333;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #495057;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background-color: hsl(214, 20%, 40%);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: hsl(210, 25%, 92%);
+}
+
+/* Filter Section */
+.filters {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.filters input {
+  flex: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filters input:hover,
+.filters select:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filters select {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.filters select:focus {
+  background-color: #f8f9fa;
+  border-color: #000306;
+}
+
+/* Buttons in Filters */
+.filters .export-button,
+.filters .add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.filters .export-button:hover,
+.filters .add-button:hover {
+  transform: translateY(-3px);
+}
+
+.filters .export-button {
+  background-color: #ffc107;
+}
+
+.filters .export-button:hover {
+  background-color: #e0a800;
+}
+
+.filters .add-button {
+  background-color: #28a745;
+}
+
+.filters .add-button:hover {
+  background-color: #218838;
+}
+
+/* Sponsor List */
+.sponsor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.sponsor-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #4d4d4d;
+}
+
+.sponsor-item h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #d63384;
+}
+
+.sponsor-item p {
+  margin: 5px 0;
+}
+
+.sponsor-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sponsor-item.selected {
+  border: 2px solid #28a745;
+}
+
+/* Sponsor Details */
+.sponsor-details {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.sponsor-details h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.sponsor-details p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.sponsor-details form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.sponsor-details form input:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons in Sponsor Details */
+.sponsor-details button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.sponsor-details button:hover {
+  transform: translateY(-3px);
+}
+
+.sponsor-details button:last-child {
+  background-color: #dc3545;
+}
+
+.sponsor-details button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* Form Styles */
+.sponsor-form input {
+  width: calc(50% - 10px);
+  margin-right: 20px;
+}
+
+.sponsor-form input:last-child {
+  margin-right: 0;
+}
+
+.sponsor-form button {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #007bff;
+}
+
+.sponsor-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Utility Classes */
+.text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-primary {
+  background-color: hsl(210, 100%, 99%);
+  border-color: #f1f3f5;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: hsl(213, 69%, 97%);
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}

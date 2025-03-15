@@ -1,0 +1,346 @@
+:root {
+  --primary-color: #fefbfc; 
+  --secondary-color: #5352ed;
+  --tertiary-color: #ffa502;
+  --background-color: #f1f2f6;
+  --tile-background: rgba(255, 255, 255, 0.9);
+  --text-color: #2f3542;
+  --sidebar-background: #2f3542;
+  --sidebar-text: #f1f2f6;
+  --gradient-start: #ff4757;
+  --gradient-end: #5352ed;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-attachment: fixed;                 
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-background);
+  color: var(--sidebar-text);
+  height: 100vh;
+  padding: 20px;
+  transition: all 0.5s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar:hover {
+  width: 280px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  color: var(--sidebar-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  transition: all 0.5s ease;
+}
+
+.dashboard h1 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 3em;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.dashboard-tile {
+  background-color: var(--tile-background);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  color: var(--text-color);
+  overflow: hidden;
+  position: relative;
+}
+
+.dashboard-tile::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  transform: rotate(45deg);
+  z-index: 0;
+  transition: all 0.6s ease;
+}
+
+.dashboard-tile:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-tile:hover::before {
+  top: -75%;
+  left: -75%;
+}
+
+.tile-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-tile h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.tile-icon {
+  font-size: 2.5em;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  align-self: center;
+  transition: all 0.3s ease;
+}
+
+.dashboard-tile:hover .tile-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.dashboard-tile p {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+.dashboard-tile p span {
+  font-weight: 600;
+  color: var(--tertiary-color);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-tile {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.dashboard-tile:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.dashboard-tile:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar:hover {
+    width: 100%;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard h1 {
+    font-size: 2.5em;
+  }
+}
+
+/* Gradient text effect for tile titles */
+.dashboard-tile h3 {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Pulse animation for important metrics */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dashboard-tile p span {
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+/* Hover effect for sidebar */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-background);
+  color: var(--sidebar-text);
+  height: 100vh;
+  padding: 0;
+  transition: all 0.5s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-menu a {
+  color: var(--sidebar-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 12px 20px;
+  border-left: 4px solid transparent;
+}
+
+.sidebar-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color);
+}
+
+.sidebar-menu i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.menu-section {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 20px 20px 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .sidebar-menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .sidebar-menu li {
+    flex: 1 1 50%;
+  }
+  
+  .menu-section {
+    flex-basis: 100%;
+  }
+}
+
+/* Glassmorphism effect for tiles */
+.dashboard-tile {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Floating animation for icons */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.tile-icon {
+  animation: float 3s ease-in-out infinite;
+}
