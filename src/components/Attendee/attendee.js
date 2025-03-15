@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Filter, Eye, Edit2, Trash2, UserPlus, CheckSquare, FileText, BarChart2 } from 'lucide-react';
+import { Filter, Eye, Edit2, Trash2, UserPlus, CheckSquare, FileText, BarChart2 } from 'lucide-react';
 import './AttendeeManagement.css';
 
 const AttendeeManagement = () => {
@@ -126,8 +126,9 @@ const AttendeeManagement = () => {
         </button>
       </div>
 
-      {selectedAttendee && (
-        <div className="mt-6 p-4 bg-white shadow-lg rounded">
+      {selectedAttendee !== null && (
+  <div className="mt-6 p-4 bg-white shadow-lg rounded">
+
           <h2 className="text-xl font-bold mb-2">Attendee Details</h2>
           <p><strong>Name:</strong> {selectedAttendee.name}</p>
           <p><strong>Registration Date:</strong> {selectedAttendee.registrationDate}</p>
