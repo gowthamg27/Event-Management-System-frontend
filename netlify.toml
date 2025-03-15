@@ -1,0 +1,6 @@
+# This file configures Netlify build settings
+# The CI= flag is used to prevent Netlify from failing the build due to ESLint warnings
+
+[build]
+  command = "CI= npm run build"
+  publish = "build"  # Ensure Netlify knows where to find the output
